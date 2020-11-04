@@ -53,8 +53,9 @@ public class GameObjectManager : MonoBehaviour
 
                 if (isHandheld)
                 {
-                    g.GetComponent<MeshRenderer>().enabled = isActivate;
-                    g.GetComponent<BoxCollider>().enabled = isActivate;
+                    if (g.GetComponent<MeshRenderer>() != null) g.GetComponent<MeshRenderer>().enabled = isActivate;
+                    if (g.GetComponent<BoxCollider>() != null) g.GetComponent<BoxCollider>().enabled = isActivate;
+                    if (g.GetComponent<MeshCollider>() != null) g.GetComponent<MeshCollider>().enabled = isActivate;
 
                     for (int i = 0; i < g.transform.childCount; i++)
                     {
@@ -66,8 +67,9 @@ public class GameObjectManager : MonoBehaviour
                 else
                 {
                     //do something to non-heldable items
-                    g.GetComponent<MeshRenderer>().enabled = false;
-                    g.GetComponent<BoxCollider>().enabled = false;
+                    if (g.GetComponent<MeshRenderer>() != null) g.GetComponent<MeshRenderer>().enabled = false;
+                    if (g.GetComponent<BoxCollider>() != null) g.GetComponent<BoxCollider>().enabled = false;
+                    if (g.GetComponent<MeshCollider>() != null) g.GetComponent<MeshCollider>().enabled = false;
 
                     for (int i = 0; i < g.transform.childCount; i++)
                     {

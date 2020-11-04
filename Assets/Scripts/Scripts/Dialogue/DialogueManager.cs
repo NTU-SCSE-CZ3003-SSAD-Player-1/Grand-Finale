@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> sentences;
     public Text dialogueText;
     public Animator animator;
+
+    public static event Action onEndDialogTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -58,5 +61,6 @@ public class DialogueManager : MonoBehaviour
     {
 
         animator.SetBool("IsOpen", false);
+        onEndDialogTrigger();
     }
 }

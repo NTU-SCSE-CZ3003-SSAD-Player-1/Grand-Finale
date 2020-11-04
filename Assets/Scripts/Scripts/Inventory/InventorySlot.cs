@@ -33,10 +33,10 @@ public class InventorySlot : MonoBehaviour, IEndDragHandler, IDragHandler
 
     public void UseItem()
     {
-        if (item != null)
+        if(item != null)
         {
             item.Use();
-            if (item.removeFromInventoryWhenUsed)
+            if(item.removeFromInventoryWhenUsed)
                 RemoveItem();
             FindObjectOfType<InventoryUI>().ToggleUI();
         }
@@ -82,7 +82,7 @@ public class InventorySlot : MonoBehaviour, IEndDragHandler, IDragHandler
         //    }
         //}
 
-
+       
 
         //if (isMouseDrag)
         //{
@@ -96,6 +96,7 @@ public class InventorySlot : MonoBehaviour, IEndDragHandler, IDragHandler
         //    target.transform.position = currentPosition;
         //}
     }
+
 
     GameObject ReturnClickedObject(out RaycastHit hit)
     {

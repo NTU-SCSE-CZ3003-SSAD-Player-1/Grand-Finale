@@ -2,21 +2,21 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class InteractableObject : Interactable, IDropHandler
+public class InteractableObject : Interactable
 {
     //public Dialogue successfulDialog;
 
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        RectTransform invPanel = transform as RectTransform;
+    //public void OnDrop(PointerEventData eventData)
+    //{
+    //    RectTransform invPanel = transform as RectTransform;
 
-        if(!RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition))
-        {
-            Debug.Log("on drop item");
+    //    if(!RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition))
+    //    {
+    //        Debug.Log("on drop item");
 
-        }
-    }
+    //    }
+    //}
 
     public override void OnInteract()
     {

@@ -24,7 +24,7 @@ public class LevelChanger : MonoBehaviour
     {
         resetLevel = true;
         animator.SetTrigger("FadeOut");
-    }
+    }   
 
     public void onFadeComplete()
     {

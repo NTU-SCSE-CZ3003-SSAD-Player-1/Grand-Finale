@@ -101,6 +101,8 @@ public class Keypad : MonoBehaviour
                     {
                         doorOpen = true;
                         FindObjectOfType<AudioManager>().Play("Success");
+
+                        //FindObjectOfType<LevelChanger>().FadeToLevel();
                     }
                     else
                     {

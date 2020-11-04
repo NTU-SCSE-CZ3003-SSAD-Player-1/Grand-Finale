@@ -4,24 +4,12 @@ using UnityEngine;
 
 public class GlassSlides : MonoBehaviour
 {
-    public enum SlidesColour
-    {
-        RED,
-        BLUE,
-        GREEN
-    }
-
-    public SlidesColour slidesColour;
     Dialogue dialogue;
 
     void Start()
     {
+
         Item.buttonClickDelegateItem += OnInteract;
-        dialogue = new Dialogue();
-        string[] new_sentences = new string[1];
-        string colour = (slidesColour.Equals(SlidesColour.RED)) ? "red" :(slidesColour.Equals(SlidesColour.BLUE))? "blue":"green";
-        new_sentences[0] = "The slides seem to be " + colour + " in colour.";
-        dialogue.sentences = new_sentences;
     }
 
 
@@ -32,8 +20,27 @@ public class GlassSlides : MonoBehaviour
     void OnInteract(string gameObjectName)
     {
 
-        if (gameObjectName == "Glass Slides Red" || gameObjectName == "Glass Slides Blue")
+        if (gameObjectName == "Glass Slides 1" || gameObjectName == "Glass Slides 2" || gameObjectName == "Glass Slides 3")
         {
+
+
+            dialogue = new Dialogue();
+            string[] new_sentences = new string[1];
+
+            if (gameObjectName == "Glass Slides 1")
+            {
+                new_sentences[0] = "The slides seem to be red in colour.";
+            }
+            else if (gameObjectName == "Glass Slides 2")
+            {
+                new_sentences[0] = "The slides seem to be green in colour.";
+            }
+            else
+            {
+                new_sentences[0] = "The slides seem to be blue in colour.";
+            }
+
+            dialogue.sentences = new_sentences;
 
             RaycastHit hitInfo;
             GameObject target = ReturnClickedObject(out hitInfo);

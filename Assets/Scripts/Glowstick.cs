@@ -7,8 +7,8 @@ public class Glowstick : MonoBehaviour
     //[Range(0f, 3f)]
     //public float distance = 1.0f;
     //bool activateItem;
-    // public Animator secret_door_animator;
-    // public Light lightbulb;
+    public Animator secret_door_animator;
+    public Light lightbulb;
 
     void Start()
     {
@@ -29,7 +29,7 @@ public class Glowstick : MonoBehaviour
 
     void OnInteract(string gameObjectName)
     {
-        //if(gameObjectName == "Glowstick")
+        if(gameObjectName == "Glowstick")
         {
             //activateItem = true;
             //if (activateItem)
@@ -41,7 +41,7 @@ public class Glowstick : MonoBehaviour
             //    ChildGameObject1.SetActive(true);
             //}
             this.gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-            this.gameObject.transform.eulerAngles = new Vector3(-45, -280, 70);
+            this.gameObject.transform.eulerAngles = new Vector3(-72, 82, -78);
             GameObject ChildGameObject1 = this.gameObject.transform.GetChild(0).gameObject;
             ChildGameObject1.SetActive(true);
         }
@@ -58,4 +58,18 @@ public class Glowstick : MonoBehaviour
         Item.buttonClickDelegateItem -= OnInteract;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "glowStickCollider")
+        {
+            Debug.Log("collision");
+            if (lightbulb.intensity == 0)
+            {
+                FindObjectOfType<AudioManager>().Play("DoorOpen");
+                secret_door_animator.SetBool("IsOpen", true);
+                Destroy(other);
+
+            }
+        }
+    }
 }

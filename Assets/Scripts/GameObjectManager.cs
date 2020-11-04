@@ -39,75 +39,48 @@ public class GameObjectManager : MonoBehaviour
     }
     public void SetActive(bool isActivate, string name, bool isHandheld)
     {
-        
         //GameObject g = Array.Find(gameObjects, game => game.CompareTag(tag));
         //GameObject g = GameObject.Find(path);
+        Debug.Log(name);
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Item");
 
         foreach ( GameObject g in gameObjects)
         {
-            Debug.Log(g.name + '-' + name);
             if(g.name == name)
             {
                 gameObj = g;
                 activateHandHeld = isHandheld;
-                if (g.GetComponent<MeshRenderer>() != null) g.GetComponent<MeshRenderer>().enabled = isActivate;
-                if (g.GetComponent<BoxCollider>() != null) g.GetComponent<BoxCollider>().enabled = isActivate;
-                if (g.GetComponent<MeshCollider>() != null) g.GetComponent<MeshCollider>().enabled = isActivate;
 
-                for (int i = 0; i < g.transform.childCount; i++)
+                if (isHandheld)
                 {
-                    var child = g.transform.GetChild(i).gameObject;
-                    if (child != null)
-                        child.SetActive(isActivate);
+                    g.GetComponent<MeshRenderer>().enabled = isActivate;
+                    g.GetComponent<BoxCollider>().enabled = isActivate;
+
+                    for (int i = 0; i < g.transform.childCount; i++)
+                    {
+                        var child = g.transform.GetChild(i).gameObject;
+                        if (child != null)
+                            child.SetActive(isActivate);
+                    }
                 }
+                else
+                {
+                    //do something to non-heldable items
+                    g.GetComponent<MeshRenderer>().enabled = false;
+                    g.GetComponent<BoxCollider>().enabled = false;
+
+                    for (int i = 0; i < g.transform.childCount; i++)
+                    {
+                        var child = g.transform.GetChild(i).gameObject;
+                        if (child != null)
+                            child.SetActive(false);
+                    }
+                }
+
             }
+            
+
         }
-            
-
-    //     //GameObject g = Array.Find(gameObjects, game => game.CompareTag(tag));
-    //     //GameObject g = GameObject.Find(path);
-    //     Debug.Log(name);
-    //     GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Item");
-
-    //     foreach ( GameObject g in gameObjects)
-    //     {
-    //         if(g.name == name)
-    //         {
-    //             gameObj = g;
-    //             activateHandHeld = isHandheld;
-
-    //             if (isHandheld)
-    //             {
-    //                 if(g)
-    //                 g.GetComponent<MeshRenderer>().enabled = isActivate;
-    //                 g.GetComponent<BoxCollider>().enabled = isActivate;
-
-    //                 for (int i = 0; i < g.transform.childCount; i++)
-    //                 {
-    //                     var child = g.transform.GetChild(i).gameObject;
-    //                     if (child != null)
-    //                         child.SetActive(isActivate);
-    //                 }
-    //             }
-    //             else
-    //             {
-    //                 //do something to non-heldable items
-    //                 g.GetComponent<MeshRenderer>().enabled = false;
-    //                 g.GetComponent<BoxCollider>().enabled = false;
-
-    //                 for (int i = 0; i < g.transform.childCount; i++)
-    //                 {
-    //                     var child = g.transform.GetChild(i).gameObject;
-    //                     if (child != null)
-    //                         child.SetActive(false);
-    //                 }
-    //             }
-
-    //         }
-            
-
-    //     }
 
         //if (g == null)
         //{

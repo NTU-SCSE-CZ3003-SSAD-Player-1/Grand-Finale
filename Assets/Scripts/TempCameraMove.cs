@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TempCameraMove : MonoBehaviour
 {
 
-    public Camera jigsawCam, rearrangeCam;
+    public Camera prismCam, chemicalCam;
     public static bool isMainCam;
 
     public GameObject left, right, down;
@@ -20,8 +20,8 @@ public class TempCameraMove : MonoBehaviour
     void Start()
     {
         isMainCam = true;
-        jigsawCam.gameObject.SetActive(false);
-        rearrangeCam.gameObject.SetActive(false);
+        prismCam.gameObject.SetActive(false);
+        chemicalCam.gameObject.SetActive(false);
         camSwitchInstance = cameraScript.GetComponent<CameraSwitch>();
         backAction = goBack;
     }
@@ -30,9 +30,10 @@ public class TempCameraMove : MonoBehaviour
     {
         // Go back to main cam
         int currentCameraPos = PlayerPrefs.GetInt("CameraPosition");
-        jigsawCam.gameObject.SetActive(false);
-        rearrangeCam.gameObject.SetActive(false);
-        jigsawCam.GetComponent<AudioListener>().enabled = false;
+        prismCam.gameObject.SetActive(false);
+        chemicalCam.gameObject.SetActive(false);
+        prismCam.GetComponent<AudioListener>().enabled = false;
+        chemicalCam.GetComponent<AudioListener>().enabled = false;
         camSwitchInstance.cameraPositionChange(currentCameraPos);
         isMainCam = true;
         left.SetActive(true);
@@ -59,12 +60,12 @@ public class TempCameraMove : MonoBehaviour
             if (hit.collider != null)
             {
                 //Debug.Log("Hit: " + hit.point);
-                if (hit.collider.CompareTag("jigpuzzle"))
+                if (hit.collider.CompareTag("chestpuzzle"))
                 {
                     Debug.Log("Go Chest Puzzle");
                     camSwitchInstance.getCamera(currentCameraPos).SetActive(false);
-                    jigsawCam.gameObject.SetActive(true);
-                    jigsawCam.GetComponent<AudioListener>().enabled = true;
+                    prismCam.gameObject.SetActive(true);
+                    prismCam.GetComponent<AudioListener>().enabled = true;
                     left.SetActive(false);
                     right.SetActive(false);
                     down.SetActive(true);
@@ -72,12 +73,13 @@ public class TempCameraMove : MonoBehaviour
                     camSwitchInstance.getCamera(currentCameraPos).GetComponent<AudioListener>().enabled = false;
                     camSwitchInstance.iHaveControl();
                     isMainCam = false;
-                } else if (hit.collider.CompareTag("rearrange"))
+                }
+                else if (hit.collider.CompareTag("electricalpuzzle"))
                 {
-                    Debug.Log("Go rearrange Puzzle");
+                    Debug.Log("Go Electrical Puzzle");
                     camSwitchInstance.getCamera(currentCameraPos).SetActive(false);
-                    rearrangeCam.gameObject.SetActive(true);
-                    rearrangeCam.GetComponent<AudioListener>().enabled = true;
+                    chemicalCam.gameObject.SetActive(true);
+                    chemicalCam.GetComponent<AudioListener>().enabled = true;
                     down.GetComponent<Button>().onClick.AddListener(backAction);
                     camSwitchInstance.getCamera(currentCameraPos).GetComponent<AudioListener>().enabled = false;
                     camSwitchInstance.iHaveControl();

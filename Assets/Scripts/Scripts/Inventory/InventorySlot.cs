@@ -57,7 +57,6 @@ public class InventorySlot : MonoBehaviour, IEndDragHandler, IDragHandler
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
-        Debug.Log("On drag");
         //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
         transform.position = Input.mousePosition;
     }
@@ -98,16 +97,16 @@ public class InventorySlot : MonoBehaviour, IEndDragHandler, IDragHandler
     }
 
 
-    GameObject ReturnClickedObject(out RaycastHit hit)
-    {
-        GameObject target = null;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
-        {
-            target = hit.collider.gameObject;
-        }
-        return target;
-    }
+    //GameObject ReturnClickedObject(out RaycastHit hit)
+    //{
+    //    GameObject target = null;
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
+    //    {
+    //        target = hit.collider.gameObject;
+    //    }
+    //    return target;
+    //}
 
     //void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     //{

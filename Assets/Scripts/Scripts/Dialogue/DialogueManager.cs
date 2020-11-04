@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
 
-    public static event Action onEndDialogTrigger;
+    public static event Action OnEndDialogTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +61,6 @@ public class DialogueManager : MonoBehaviour
     {
 
         animator.SetBool("IsOpen", false);
-        onEndDialogTrigger();
+        OnEndDialogTrigger();
     }
 }

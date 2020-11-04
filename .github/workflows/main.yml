@@ -46,7 +46,7 @@ jobs:
 
         # Build
         - name: Build project
-          uses: NTU-SCSE-CZ3003-SSAD-Player-1/unity-builder@main
+          uses: NTU-SCSE-CZ3003-SSAD-Player-1/unity-builder@v1.5-changes
           with:
             unityVersion: ${{ matrix.unityVersion }}
             targetPlatform: ${{ matrix.targetPlatform }}

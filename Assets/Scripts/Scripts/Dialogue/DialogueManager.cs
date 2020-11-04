@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
 
-    public static event Action OnEndDialogTrigger;
+    public static event Action OnEndDialogTrigger = delegate { };
 
     // Start is called before the first frame update
     void Start()

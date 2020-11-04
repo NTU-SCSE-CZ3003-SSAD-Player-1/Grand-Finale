@@ -20,7 +20,7 @@ public class ElectricalBoxPuzzle : MonoBehaviour
 
     public TextMeshPro wallText;
 
-    public Camera camera;
+    public Camera puzcam;
 
     private int[] sCol = { 0, 1, 2, 3 }, eCol = { 0, 1, 2, 3 };
     private Color[] colorsUsed = { Color.red, Color.blue, Color.green, Color.magenta };
@@ -119,9 +119,9 @@ public class ElectricalBoxPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !L1CameraController.isMainCam && camera.gameObject.activeSelf)
+        if (Input.GetMouseButtonDown(0) && !L1CameraController.isMainCam && puzcam.gameObject.activeSelf)
         {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = puzcam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 100);
             if (hit.collider != null)

@@ -13,15 +13,7 @@ MonoBehaviour:
   m_Name: Orange1
   m_EditorClassIdentifier: 
   topRow:
-  - {fileID: 11400000, guid: 28900bdd1d1cd574cbca6a5ccf97b1c0, type: 2}
-  - {fileID: 11400000, guid: a8141dd09eb91a24aae58f755d2ee70d, type: 2}
-  - {fileID: 0}
-  midRow:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  bottomRow:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e9148ab490e504915a7514a0755f1ca6, type: 2}
+  - {fileID: 11400000, guid: b763adf71aeed40aab14fb7d884c23ee, type: 2}
   - {fileID: 0}
   output: {fileID: 11400000, guid: ba3b5430e86eb23408dce0f87831013e, type: 2}

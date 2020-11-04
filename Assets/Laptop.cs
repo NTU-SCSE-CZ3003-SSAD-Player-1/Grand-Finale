@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class Laptop : MonoBehaviour
 {
-    public Canvas canvas;
-    public Canvas mainCanvas;
     public Camera craftCam;
     public static bool isMainCam;
-    public GameObject down;
+    public GameObject left,right,down;
     public GameObject cameraScript;
     private CameraSwitch camSwitchInstance;
     private UnityEngine.Events.UnityAction backAction;
@@ -19,7 +17,6 @@ public class Laptop : MonoBehaviour
     {
         isMainCam = true;
         craftCam.gameObject.SetActive(false);
-        canvas.gameObject.SetActive(false);
         camSwitchInstance = cameraScript.GetComponent<CameraSwitch>();
         backAction = goBack;
     }
@@ -34,11 +31,10 @@ public class Laptop : MonoBehaviour
         Debug.Log("start craft");
         int currentCameraPos = PlayerPrefs.GetInt("CameraPosition");
         camSwitchInstance.getCamera(currentCameraPos).SetActive(false);
-        canvas.gameObject.SetActive(true);
-        mainCanvas.gameObject.SetActive(false);
-        canvas.transform.SetAsLastSibling(); //move to the front (on parent)
         craftCam.gameObject.SetActive(true);
         craftCam.GetComponent<AudioListener>().enabled = true;
+        left.SetActive(false);
+        right.SetActive(false);
         down.SetActive(true);
         down.GetComponent<Button>().onClick.AddListener(backAction);
         camSwitchInstance.getCamera(currentCameraPos).GetComponent<AudioListener>().enabled = false;
@@ -46,16 +42,16 @@ public class Laptop : MonoBehaviour
         isMainCam = false;
     }
 
-    void goBack()
+    public void goBack()
     {
         // Go back to main cam
         int currentCameraPos = PlayerPrefs.GetInt("CameraPosition");
         craftCam.gameObject.SetActive(false);
-        canvas.gameObject.SetActive(false);
-        mainCanvas.gameObject.SetActive(true);
         craftCam.GetComponent<AudioListener>().enabled = false;
         camSwitchInstance.cameraPositionChange(currentCameraPos);
         isMainCam = true;
+        left.SetActive(true);
+        right.SetActive(true);
         down.SetActive(false);
         down.GetComponent<Button>().onClick.RemoveListener(backAction);
         camSwitchInstance.youHaveControl();

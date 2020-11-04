@@ -13,15 +13,7 @@ MonoBehaviour:
   m_Name: Green2
   m_EditorClassIdentifier: 
   topRow:
-  - {fileID: 11400000, guid: a8141dd09eb91a24aae58f755d2ee70d, type: 2}
-  - {fileID: 11400000, guid: 7524167717ac6b840a4a31b228db16c7, type: 2}
-  - {fileID: 0}
-  midRow:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  bottomRow:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 71857c40d9d3a48f09c6b240129e7767, type: 2}
+  - {fileID: 11400000, guid: e9148ab490e504915a7514a0755f1ca6, type: 2}
   - {fileID: 0}
   output: {fileID: 11400000, guid: 1b2df96905470644f93ce404e92365e4, type: 2}

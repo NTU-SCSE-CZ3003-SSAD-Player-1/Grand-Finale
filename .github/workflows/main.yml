@@ -46,7 +46,7 @@ jobs:
 
         # Build
         - name: Build project
-          uses: webbertakken/unity-builder@v1.5
+          uses: NTU-SCSE-CZ3003-SSAD-Player-1/unity-builder@main
           with:
             unityVersion: ${{ matrix.unityVersion }}
             targetPlatform: ${{ matrix.targetPlatform }}

@@ -35,7 +35,7 @@ public class KeyInteract : MonoBehaviour
                 if (target.name == "Door")
                 {
                     Inventory.instance.Remove(itemObj);
-                    DialogueManager.onEndDialogTrigger += NextScene;
+                    DialogueManager.OnEndDialogTrigger += NextScene;
                     TriggerDialogue();
                 }
 
@@ -45,7 +45,7 @@ public class KeyInteract : MonoBehaviour
 
     void NextScene()
     {
-        DialogueManager.onEndDialogTrigger -= NextScene;
+        DialogueManager.OnEndDialogTrigger -= NextScene;
         FindObjectOfType<LevelChanger>().FadeToLevel();
     }
 

@@ -78,7 +78,7 @@ public class TimerManager : MonoBehaviour
                 //restart level
                 displayText.text = "Time: 00:00.00";
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-                DialogueManager.onEndDialogTrigger += ResetScene;
+                DialogueManager.OnEndDialogTrigger += ResetScene;
             }
 
             if(timePlaying.Seconds < gameTime-1 && timePlaying.Seconds==0 && loopPrevention == false)
@@ -101,7 +101,7 @@ public class TimerManager : MonoBehaviour
 
     void ResetScene()
     {
-        DialogueManager.onEndDialogTrigger -= ResetScene;
+        DialogueManager.OnEndDialogTrigger -= ResetScene;
         FindObjectOfType<LevelChanger>().ResetLevel();
     }
 }

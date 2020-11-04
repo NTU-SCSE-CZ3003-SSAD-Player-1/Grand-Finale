@@ -13620,7 +13620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4985262022023447477, guid: 73f1c6915b2fd4a59a518bcf0dd1102b, type: 3}
       propertyPath: levelToLoad
-      value: L1Scene
+      value: Storage Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f1c6915b2fd4a59a518bcf0dd1102b, type: 3}

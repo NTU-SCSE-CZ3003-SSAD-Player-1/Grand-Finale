@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21306c06be3664174a5ffbb05f87ffef, type: 3}
   m_Name: Glowstick
   m_EditorClassIdentifier: 
-  name: Glowstick
-  icon: {fileID: 21300000, guid: 06fd3805f988e41cca97e1db63872ff4, type: 3}
-  gameObjectName: Glowstick
+  name: Torchlight
+  icon: {fileID: 21300000, guid: c112e46aa60de564ba5057b2fd553611, type: 3}
+  gameObjectName: Torchlight
   itemtype: 0
   isHandHeld: 1
+  removeFromInventoryWhenUsed: 1

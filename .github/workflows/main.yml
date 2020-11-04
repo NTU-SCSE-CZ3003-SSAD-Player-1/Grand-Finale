@@ -1,0 +1,59 @@
+name: Build Unity Project
+
+on:
+    pull_request: {}
+    push: { branches: [master] }
+
+env:
+    UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+    UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+    UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+
+jobs:
+    build:
+        name: Build - ${{ matrix.targetPlatform }} - Unity ver. ${{ matrix.unityVersion }}
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+              unityVersion:
+                - 2020.1.10f1
+              targetPlatform:
+                - StandaloneLinux64
+                - StandaloneWindows64
+                - StandaloneWindows
+                - StandaloneOSX
+                #- WebGL
+        steps:
+        # Checkout
+        - name: Checkout repository
+          uses: actions/checkout@v2
+          with:
+            lfs: true
+
+        # Cache
+        - uses: actions/cache@v1.1.0
+          with:
+            path: Library
+            key: Library
+
+        # Test
+        - name: Run tests
+          uses: webbertakken/unity-test-runner@v1.7
+          with:
+            unityVersion: ${{ matrix.unityVersion }}
+            #customParameters: '-nographics'
+
+        # Build
+        - name: Build project
+          uses: webbertakken/unity-builder@v1.5
+          with:
+            unityVersion: ${{ matrix.unityVersion }}
+            targetPlatform: ${{ matrix.targetPlatform }}
+            allowDirtyBuild: true
+
+        # Output
+        - uses: actions/upload-artifact@v1
+          with:
+            name: Build
+            path: build

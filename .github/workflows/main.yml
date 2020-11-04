@@ -23,7 +23,7 @@ jobs:
                 - StandaloneWindows64
                 - StandaloneWindows
                 - StandaloneOSX
-                #- WebGL
+                - WebGL
         steps:
         # Checkout
         - name: Checkout repository

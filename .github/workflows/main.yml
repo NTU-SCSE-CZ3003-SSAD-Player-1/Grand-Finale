@@ -23,8 +23,8 @@ jobs:
                 - StandaloneWindows64
                 - StandaloneWindows
                 - StandaloneOSX
-                - WebGL
-                - Android
+                #- WebGL
+                #- Android
         steps:
         # Checkout
         - name: Checkout repository

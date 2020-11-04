@@ -24,6 +24,7 @@ jobs:
                 - StandaloneWindows
                 - StandaloneOSX
                 - WebGL
+                - Android
         steps:
         # Checkout
         - name: Checkout repository

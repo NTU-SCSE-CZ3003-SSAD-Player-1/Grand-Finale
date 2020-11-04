@@ -13,15 +13,7 @@ MonoBehaviour:
   m_Name: Purple2
   m_EditorClassIdentifier: 
   topRow:
-  - {fileID: 11400000, guid: 28900bdd1d1cd574cbca6a5ccf97b1c0, type: 2}
-  - {fileID: 11400000, guid: 7524167717ac6b840a4a31b228db16c7, type: 2}
-  - {fileID: 0}
-  midRow:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  bottomRow:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 71857c40d9d3a48f09c6b240129e7767, type: 2}
+  - {fileID: 11400000, guid: b763adf71aeed40aab14fb7d884c23ee, type: 2}
   - {fileID: 0}
   output: {fileID: 11400000, guid: d749d8a2d09c3104d8732cd7eca10f2e, type: 2}

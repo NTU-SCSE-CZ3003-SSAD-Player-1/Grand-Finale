@@ -5,7 +5,6 @@ using UnityEngine;
 public class RecipeManager : MonoBehaviour
 {
     public ItemSlot[] topRow = new ItemSlot[3];
-
     private List<ItemSlot[]> allSlots = new List<ItemSlot[]>();
 
     [Space(10)]

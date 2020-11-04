@@ -14,14 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topRow:
   - {fileID: 11400000, guid: 8ccf9406088dfe34ab583af52097f42b, type: 2}
-  - {fileID: 11400000, guid: 28900bdd1d1cd574cbca6a5ccf97b1c0, type: 2}
-  - {fileID: 0}
-  midRow:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  bottomRow:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b763adf71aeed40aab14fb7d884c23ee, type: 2}
   - {fileID: 0}
   output: {fileID: 11400000, guid: 7046ec9ced8a53440a5e5ed310672773, type: 2}

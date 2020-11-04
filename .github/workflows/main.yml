@@ -58,7 +58,7 @@ jobs:
         - name: Fix MacOS Permissions
           if: matrix.targetPlatform == 'StandaloneOSX'
           run: |
-            chmod +x build/Build-StandaloneOSX/StandaloneOSX/SSADPlayerOne-StandaloneOSX.app/Contents/MacOS/*
+            chmod +x build/StandaloneOSX/SSADPlayerOne-StandaloneOSX.app/Contents/MacOS/*
 
         # Output
         - uses: actions/upload-artifact@v1

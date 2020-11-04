@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Torchlight
   m_EditorClassIdentifier: 
   name: Torchlight
-  icon: {fileID: 21300000, guid: 06fd3805f988e41cca97e1db63872ff4, type: 3}
-  gameObjectName: torchlight
+  icon: {fileID: 21300000, guid: c112e46aa60de564ba5057b2fd553611, type: 3}
+  gameObjectName: Torchlight
   itemtype: 0
   isHandHeld: 1
+  removeFromInventoryWhenUsed: 1

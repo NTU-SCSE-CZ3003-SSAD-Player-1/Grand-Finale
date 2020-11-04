@@ -14,7 +14,7 @@ public class safeKeypad : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        currentPW = "GTP";
+        currentPW = "PW";
         input = "";
         doorOpen = false;
         keypadScreen = false;
@@ -64,9 +64,9 @@ public class safeKeypad : MonoBehaviour
                 GUI.Box(new Rect(x+padding, 100+padding, 310, labelHeight), input, boxStyle);
 
 
-                if (GUI.Button(new Rect(x + padding, y + labelHeight + padding, 100, 100), "R", buttonStyle))
+                if (GUI.Button(new Rect(x + padding, y + labelHeight + padding, 100, 100), "W", buttonStyle))
                 {
-                    input += "R";
+                    input += "W";
                 }
                 else if (GUI.Button(new Rect((x + padding)*2, y + labelHeight + padding, 100, 100), "G", buttonStyle))
                 {

@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class keycardScript : MonoBehaviour
+public class torchlight : MonoBehaviour
 {
     //[Range(0f, 3f)]
     //public float distance = 1.0f;
     //bool activateItem;
-    public Animator secret_door_animator;
-    public Dialogue placeholderDialog;
-    //public Light lightbulb;
+    // public Animator secret_door_animator;
+    // public Light lightbulb;
 
     void Start()
     {
@@ -30,7 +29,8 @@ public class keycardScript : MonoBehaviour
 
     void OnInteract(string gameObjectName)
     {
-        Debug.Log("on interact with glowstickkkk !! freakkk!");
+        //if(gameObjectName == "Glowstick")
+        {
             //activateItem = true;
             //if (activateItem)
             //{
@@ -40,11 +40,11 @@ public class keycardScript : MonoBehaviour
             //    GameObject ChildGameObject1 = this.gameObject.transform.GetChild(0).gameObject;
             //    ChildGameObject1.SetActive(true);
             //}
-            //this.gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-            this.gameObject.transform.eulerAngles = new Vector3(-72, 82, -158);
+            this.gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            this.gameObject.transform.eulerAngles = new Vector3(-45, -280, 70);
             GameObject ChildGameObject1 = this.gameObject.transform.GetChild(0).gameObject;
             ChildGameObject1.SetActive(true);
-        
+        }
         //else
         //{
         //    activateItem = false;
@@ -53,35 +53,9 @@ public class keycardScript : MonoBehaviour
 
     }
 
-    void NextScene()
-    {
-        //DialogueManager.OnEndDialogTrigger -= NextScene;
-        FindObjectOfType<LevelChanger>().FadeToLevel();
-    }
-
     void OnDisable()
     {
         Item.buttonClickDelegateItem -= OnInteract;
     }
 
-    public void TriggerDialogue()
-    {
-        FindObjectOfType<DialogueManager>().StartDialogue(placeholderDialog);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "doorCollider")
-        {
-            Debug.Log("collision");
-                //FindObjectOfType<AudioManager>().Play("DoorOpen");
-                secret_door_animator.SetBool("isOpen", true);
-                DialogueManager.OnEndDialogTrigger += NextScene;
-                TriggerDialogue();
-                NextScene();
-                Destroy(other);
-
-            
-        }
-    }
 }

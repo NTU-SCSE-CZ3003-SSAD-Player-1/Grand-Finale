@@ -14,6 +14,7 @@ public class TimerManager : MonoBehaviour
     private TimeSpan timePlaying;
     private bool loopPrevention;
     private float gameTime = 300f;
+    private Dialogue dialogue;
 
     private void Awake()
     {
@@ -35,6 +36,13 @@ public class TimerManager : MonoBehaviour
         isActivated = false;
         loopPrevention = false;
         StartTimer();
+
+        dialogue = new Dialogue();
+        // TODO: SEAN FILL ME SEMPAI
+        string[] new_sentences = new string[2];
+        new_sentences[0] = "\"Putting humans in a trapped and repetitive environment produces stress...\"";
+        new_sentences[1] = "\"Reducing time of the challenge also intensify the stress..\"";
+        dialogue.sentences = new_sentences;
 
     }
 
@@ -69,7 +77,8 @@ public class TimerManager : MonoBehaviour
             {
                 //restart level
                 displayText.text = "Time: 00:00.00";
-                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                DialogueManager.onEndDialogTrigger += ResetScene;
             }
 
             if(timePlaying.Seconds < gameTime-1 && timePlaying.Seconds==0 && loopPrevention == false)
@@ -88,5 +97,11 @@ public class TimerManager : MonoBehaviour
         //paused
 
         yield return null;
+    }
+
+    void ResetScene()
+    {
+        DialogueManager.onEndDialogTrigger -= ResetScene;
+        FindObjectOfType<LevelChanger>().ResetLevel();
     }
 }

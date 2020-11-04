@@ -6,6 +6,7 @@ public class LevelChanger : MonoBehaviour
     public Animator animator;
 
     public string levelToLoad;
+    private bool resetLevel = false;
 
 
     // Update is called once per frame
@@ -19,8 +20,20 @@ public class LevelChanger : MonoBehaviour
         animator.SetTrigger("FadeOut");
     }
 
+    public void ResetLevel()
+    {
+        resetLevel = true;
+        animator.SetTrigger("FadeOut");
+    }
+
     public void onFadeComplete()
     {
-        SceneManager.LoadScene(levelToLoad);
+        if (resetLevel)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            resetLevel = false;
+        } else {
+            SceneManager.LoadScene(levelToLoad);
+        }
     }
 }

@@ -55,7 +55,8 @@ jobs:
             buildName: SSADPlayerOne-${{ matrix.targetPlatform }} 
             
         # Permissions
-        - if: matrix.targetPlatform == 'StandaloneOSX'
+        - name: Fix MacOS Permissions
+          if: matrix.targetPlatform == 'StandaloneOSX'
           run: |
             chmod +x build/Build-StandaloneOSX/StandaloneOSX/SSADPlayerOne-StandaloneOSX.app/Contents/MacOS/*
 

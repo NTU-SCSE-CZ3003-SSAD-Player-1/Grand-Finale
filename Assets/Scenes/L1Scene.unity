@@ -8903,7 +8903,7 @@ MonoBehaviour:
   sucobj: {fileID: 1148156440}
   successSound: {fileID: 1977453313}
   wallText: {fileID: 734861736}
-  camera: {fileID: 2063323210}
+  puzcam: {fileID: 2063323210}
 --- !u!1001 &1547760405
 PrefabInstance:
   m_ObjectHideFlags: 0

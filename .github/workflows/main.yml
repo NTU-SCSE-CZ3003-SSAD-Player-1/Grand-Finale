@@ -24,6 +24,7 @@ jobs:
                 - StandaloneWindows
                 - StandaloneOSX
                 #- WebGL
+                #- Android
         steps:
         # Checkout
         - name: Checkout repository
@@ -46,12 +47,18 @@ jobs:
 
         # Build
         - name: Build project
-          uses: webbertakken/unity-builder@v1.5
+          uses: NTU-SCSE-CZ3003-SSAD-Player-1/unity-builder@v1.5-changes
           with:
             unityVersion: ${{ matrix.unityVersion }}
             targetPlatform: ${{ matrix.targetPlatform }}
             allowDirtyBuild: true
             buildName: SSADPlayerOne-${{ matrix.targetPlatform }} 
+            
+        # Permissions
+        - name: Fix MacOS Permissions
+          if: matrix.targetPlatform == 'StandaloneOSX'
+          run: |
+            chmod +x build/StandaloneOSX/SSADPlayerOne-StandaloneOSX.app/Contents/MacOS/*
 
         # Output
         - uses: actions/upload-artifact@v1

@@ -11,6 +11,8 @@ public class LaserPen : MonoBehaviour
     public GameObject cameraScript;
     private CameraSwitch camSwitchInstance;
     private UnityEngine.Events.UnityAction backAction;
+    private Dialogue dialogue;
+    private bool isSuccess = false;
 
 
     void Start()
@@ -21,6 +23,13 @@ public class LaserPen : MonoBehaviour
         prismCam.gameObject.SetActive(false);
         camSwitchInstance = cameraScript.GetComponent<CameraSwitch>();
         backAction = goBack;
+
+
+        dialogue = new Dialogue();
+        string[] new_sentences = new string[2];
+        new_sentences[0] = "Use your ARROW KEYS to control the laser";
+        new_sentences[1] = "Your laser has to hit the end to clear this";
+        dialogue.sentences = new_sentences;
     }
 
 
@@ -41,7 +50,7 @@ public class LaserPen : MonoBehaviour
     {
         if (gameObjectName == "Laser")
         {
-            this.gameObject.transform.eulerAngles = new Vector3(-72, 82, -78);
+            this.gameObject.transform.eulerAngles = new Vector3(-72, -90, -78);
             Debug.Log("use laser");
         }
 
@@ -70,7 +79,13 @@ public class LaserPen : MonoBehaviour
             camSwitchInstance.getCamera(currentCameraPos).GetComponent<AudioListener>().enabled = false;
             camSwitchInstance.iHaveControl();
             isMainCam = false;
-            
+
+            if (!isSuccess)
+            {
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                isSuccess = true;
+            }
+
         }
     }
 

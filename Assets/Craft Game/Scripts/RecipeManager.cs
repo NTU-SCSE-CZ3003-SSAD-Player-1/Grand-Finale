@@ -284,11 +284,11 @@ public class RecipeManager : MonoBehaviour
                     
 
                 }
-                //else
-                //{
-                //    outputSlot.currItem = null;
-                //    outputSlot.UpdateSlotData();
-                //}
+                else
+                {
+                   outputSlot.currItem = null;
+                   outputSlot.UpdateSlotData();
+                }
                 
             }
 

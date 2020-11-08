@@ -9,11 +9,14 @@ public class keycardScript : MonoBehaviour
     //bool activateItem;
     public Animator secret_door_animator;
     public Dialogue placeholderDialog;
+    public Item itemObj;
     //public Light lightbulb;
+    public bool once;
 
     void Start()
     {
         Item.buttonClickDelegateItem += OnInteract;
+        once = true;
         //activateItem = false;
     }
 
@@ -55,7 +58,7 @@ public class keycardScript : MonoBehaviour
 
     void NextScene()
     {
-        //DialogueManager.OnEndDialogTrigger -= NextScene;
+        DialogueManager.OnEndDialogTrigger -= NextScene;
         FindObjectOfType<LevelChanger>().FadeToLevel();
     }
 
@@ -73,13 +76,14 @@ public class keycardScript : MonoBehaviour
     {
         if (other.gameObject.name == "doorCollider")
         {
+            Inventory.instance.Remove(itemObj);
             Debug.Log("collision");
                 //FindObjectOfType<AudioManager>().Play("DoorOpen");
-                secret_door_animator.SetBool("isOpen", true);
+            secret_door_animator.SetBool("isOpen", true);
+            TriggerDialogue();
                 DialogueManager.OnEndDialogTrigger += NextScene;
-                TriggerDialogue();
-                NextScene();
-                Destroy(other);
+             
+            Destroy(this);
 
             
         }

@@ -64,6 +64,8 @@ public class ItemSlot : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
 
                     foundSlot = true;
 
+                    FindObjectOfType<AudioManager>().Play("Drag_drop");
+
 
                 }
             }

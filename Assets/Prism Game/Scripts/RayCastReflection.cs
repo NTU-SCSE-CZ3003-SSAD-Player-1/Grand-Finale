@@ -69,6 +69,8 @@ public class RayCastReflection : MonoBehaviour{
                             laserRotationInstance.Control = false;
                             moveMountInstance.Control = false;
 
+
+                            FindObjectOfType<AudioManager>().Play("Win");
                             Inventory.instance.Add(item);
                             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
                             isSuccess = true;

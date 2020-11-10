@@ -97,19 +97,5 @@ public class InventorySlot : MonoBehaviour, IEndDragHandler, IDragHandler
     }
 
 
-    //GameObject ReturnClickedObject(out RaycastHit hit)
-    //{
-    //    GameObject target = null;
-    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    //    if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
-    //    {
-    //        target = hit.collider.gameObject;
-    //    }
-    //    return target;
-    //}
 
-    //void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
-    //{
-    //    Debug.Log("on pointer down");
-    //}
 }

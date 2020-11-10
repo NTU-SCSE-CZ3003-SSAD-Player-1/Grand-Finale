@@ -9721,6 +9721,27 @@ MonoBehaviour:
     scheduledEndTime: 0
     loop: 0
     source: {fileID: 0}
+  - name: Drag_drop
+    clip: {fileID: 8300000, guid: f4779c1a4e2a54019b076848ca868537, type: 3}
+    volume: 1
+    pitch: 1
+    scheduledEndTime: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: e06d5b7fbecfe4886af3de419bd4428f, type: 3}
+    volume: 1
+    pitch: 1
+    scheduledEndTime: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Laser
+    clip: {fileID: 8300000, guid: fb27a245768d64205875c09eed09b0e4, type: 3}
+    volume: 1
+    pitch: 1
+    scheduledEndTime: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1089410857
 Transform:
   m_ObjectHideFlags: 0

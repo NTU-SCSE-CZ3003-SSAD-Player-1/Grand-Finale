@@ -83,6 +83,7 @@ public class LaserPen : MonoBehaviour
             if (!isSuccess)
             {
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                FindObjectOfType<AudioManager>().Play("Laser");
                 isSuccess = true;
             }
 

@@ -274,6 +274,7 @@ public class RecipeManager : MonoBehaviour
                     {
                         isSuccess = true;
                         Inventory.instance.Add(item);
+                        FindObjectOfType<AudioManager>().Play("Win");
                         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
                     }
                     //else

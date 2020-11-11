@@ -20,7 +20,7 @@ public class Pieces : MonoBehaviour
     {
       RightPosition = transform.position;
       transform.position = new Vector3(UnityEngine.Random.Range(-17f, -10f), UnityEngine.Random.Range(3.3f, -4f));
-       dialogue = new Dialogue();
+        dialogue = new Dialogue();
         string[] new_sentences = new string[2];
         new_sentences[0] = "The power is back!";
         new_sentences[1] = "The lights are turned on!";
@@ -47,11 +47,7 @@ public class Pieces : MonoBehaviour
               Debug.Log("Puzzle Solved");  
               finished = true;
               onFinish();
-              //if (!showOnce)
-            //{
-                TriggerDialogue();
-                //showOnce = true;
-            //}
+              TriggerDialogue();
 
             }
           }

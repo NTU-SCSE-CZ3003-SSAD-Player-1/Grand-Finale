@@ -46,6 +46,10 @@ public class allLightsScript : MonoBehaviour
         lightbulb3.intensity = 1;
     }
 
+    private void OnDestroy()
+    {
+        Pieces.onFinish -= something;
+    }
 
     public void TriggerDialogue()
     {

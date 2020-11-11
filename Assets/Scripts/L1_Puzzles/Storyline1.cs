@@ -10,6 +10,7 @@ public class Storyline1 : MonoBehaviour
     void Start()
     {
         StartCoroutine(callStartDialog());
+        endObject.SetActive(false);
     }
 
     private IEnumerator callStartDialog()

@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 56474654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d901650fb584a2a9f36c2b5d428e52, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a206d097fb64420e8d92721f8c90f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sd:
@@ -1164,7 +1164,8 @@ MonoBehaviour:
     - Looks scientific here.... Maybe there are props lying around to get me out
       of here...
   repeatD:
-    sentences: []
+    sentences:
+    - wasn't i here before?
 --- !u!4 &56474656
 Transform:
   m_ObjectHideFlags: 0

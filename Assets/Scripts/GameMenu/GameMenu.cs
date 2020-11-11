@@ -34,8 +34,11 @@ public class GameMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        //Application.Quit();
+        FindObjectOfType<LevelChanger>().BackToMenu();
+        //SceneManager.LoadScene(0);
         FindObjectOfType<AudioManager>().Play("Click");
+        ResumeGame();
     }
 
     public void PauseGame() {

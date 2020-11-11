@@ -17,7 +17,7 @@ public class allLightsScript : MonoBehaviour
         dialogue = new Dialogue();
         string[] new_sentences = new string[2];
         new_sentences[0] = "I can't see.";
-        new_sentences[1] = "Maybe I need something to see in the dark";
+        new_sentences[1] = "Maybe I need something to see in the dark.";
         dialogue.sentences = new_sentences;
         lightbulb1.intensity = 0;
         lightbulb2.intensity = 0;

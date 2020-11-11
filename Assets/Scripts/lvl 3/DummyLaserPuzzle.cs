@@ -10,8 +10,8 @@ public class DummyLaserPuzzle : MonoBehaviour
     {
         dialogue = new Dialogue();
         string[] new_sentences = new string[2];
-        new_sentences[0] = "hmmmm... this looks playable";
-        new_sentences[1] = "I think it needs some kind of laser to trigger the game";
+        new_sentences[0] = "This looks like a strange puzzle..";
+        new_sentences[1] = "I think it needs some kind of laser for it to work";
         dialogue.sentences = new_sentences;
     }
 

@@ -35,7 +35,7 @@ public class RayCastReflection : MonoBehaviour{
         moveMountInstance = moveMount.GetComponent<MoveMount>();
         dialogue = new Dialogue();
         string[] new_sentences = new string[2];
-        new_sentences[0] = "You have did it!";
+        new_sentences[0] = "Hmm, the laser seems to have triggered something..";
         new_sentences[1] = "Check your inventory for a new item";
         dialogue.sentences = new_sentences;
     }

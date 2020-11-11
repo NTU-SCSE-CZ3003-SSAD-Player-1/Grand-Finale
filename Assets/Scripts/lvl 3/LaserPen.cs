@@ -28,7 +28,8 @@ public class LaserPen : MonoBehaviour
         dialogue = new Dialogue();
         string[] new_sentences = new string[2];
         new_sentences[0] = "Use your ARROW KEYS to control the laser";
-        new_sentences[1] = "Your laser has to hit the end to clear this";
+        new_sentences[1] = "Up, down to move and left, right to rotate";
+        new_sentences[2] = "Your laser has to hit the target to clear this";
         dialogue.sentences = new_sentences;
     }
 

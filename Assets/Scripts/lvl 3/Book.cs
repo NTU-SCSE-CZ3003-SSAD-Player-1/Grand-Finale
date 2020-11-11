@@ -12,8 +12,8 @@ public class Book : MonoBehaviour
         Item.buttonClickDelegateItem += OnInteract;
         dialogue = new Dialogue();
         string[] new_sentences = new string[2];
-        new_sentences[0] = "This doc seems talk about pushing human behaviour under stress...";
-        new_sentences[1] = "\"Humans under high level of stress may develop special abilities.... ? \"";
+        new_sentences[0] = "This document talks about an experiment on human behaviour placed under stress...";
+        new_sentences[1] = "\"Humans under high level of stress may develop special abilities....? \"";
         dialogue.sentences = new_sentences;
     }
 

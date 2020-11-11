@@ -29,15 +29,15 @@ public class GlassSlides : MonoBehaviour
 
             if (gameObjectName == "Glass Slides 1")
             {
-                new_sentences[0] = "The slides seem to be red in colour.";
+                new_sentences[0] = "The slides seems to be red in colour.";
             }
             else if (gameObjectName == "Glass Slides 2")
             {
-                new_sentences[0] = "The slides seem to be green in colour.";
+                new_sentences[0] = "The slides seems to be green in colour.";
             }
             else
             {
-                new_sentences[0] = "The slides seem to be blue in colour.";
+                new_sentences[0] = "The slides seems to be blue in colour.";
             }
 
             dialogue.sentences = new_sentences;

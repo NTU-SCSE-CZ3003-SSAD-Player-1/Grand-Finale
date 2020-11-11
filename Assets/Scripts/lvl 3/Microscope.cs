@@ -10,7 +10,7 @@ public class Microscope : MonoBehaviour
     {
         dialogue = new Dialogue();
         string[] new_sentences = new string[1];
-        new_sentences[0] = "This seems useful.. maybe i could find some glass slides";
+        new_sentences[0] = "This seems useful.. Maybe there are more glass slides around.";
         dialogue.sentences = new_sentences;
     }
 

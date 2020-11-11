@@ -7,6 +7,8 @@ public class L1CameraController : MonoBehaviour
     public Camera chestCam, electricalCam, checkLockCam;
     public static bool isMainCam;
 
+    public Image endGameImage;
+
     public GameObject left, right, down;
 
     public GameObject cameraScript;
@@ -22,6 +24,7 @@ public class L1CameraController : MonoBehaviour
         electricalCam.gameObject.SetActive(false);
         camSwitchInstance = cameraScript.GetComponent<CameraSwitch>();
         backAction = goBack;
+        endGameImage.color = Color.black;
     }
 
     void goBack()
@@ -86,8 +89,27 @@ public class L1CameraController : MonoBehaviour
                     right.SetActive(false);
                     down.SetActive(true);
                     isMainCam = false;
+                } else if (hit.collider.CompareTag("endgame"))
+                {
+                    string[] trigger = { "This wasn’t here before...", "Is this…poison…?", "I’d rather die than being stuck here FOREVER!! [drinks the poison]" };
+                    // TODO: Show dialogue
+                    Dialogue eDialog = new Dialogue();
+                    eDialog.sentences = trigger;
+                    DialogueManager.OnEndDialogTrigger += EndScene;
+                    FindObjectOfType<DialogueManager>().StartDialogue(eDialog);
+                    // TODO: Fade to black
+                    // TODO: Set flag for EG
+                    // TODO: End the game
                 }
             }
         }
+    }
+
+    public void EndScene()
+    {
+        DialogueManager.OnEndDialogTrigger -= EndScene;
+        PlayerPrefs.SetInt("end_game", 1);
+        endGameImage.color = Color.green;
+        FindObjectOfType<LevelChanger>().ResetLevel();
     }
 }

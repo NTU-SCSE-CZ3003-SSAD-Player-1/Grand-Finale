@@ -2707,7 +2707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae9056d3d9202a43a4e23f340628358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieces: {fileID: 0}
+  pieces: {fileID: 1858204332}
   lightbulb1: {fileID: 1078869708}
   lightbulb2: {fileID: 273852845}
   lightbulb3: {fileID: 571565003}
@@ -7241,6 +7241,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 455176, guid: cddf3d66c16cf1c4eb4d9646cc4d763f, type: 3}
   m_PrefabInstance: {fileID: 281347321}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1858204332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4829541275566460265, guid: c92b2cf26c64d7b43b80aa81a09384b4, type: 3}
+  m_PrefabInstance: {fileID: 45999608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54d318e7f133433a96689d7be5a3ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1866473185
 PrefabInstance:
   m_ObjectHideFlags: 0

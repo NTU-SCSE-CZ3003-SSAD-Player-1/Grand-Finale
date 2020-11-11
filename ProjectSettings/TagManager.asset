@@ -3,7 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ring
+  - Item
+  - electricalpuzzle
+  - chestpuzzle
+  - pane
+  - padlock
+  - Mirror
+  - Target
+  - rearrange
+  - poster
+  - jigpuzzle
+  - Interactable
+  - Puzzle
+  - endgame
   layers:
   - Default
   - TransparentFX

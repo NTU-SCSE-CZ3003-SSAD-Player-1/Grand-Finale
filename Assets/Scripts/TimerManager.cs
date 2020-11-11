@@ -41,7 +41,7 @@ public class TimerManager : MonoBehaviour
         dialogue = new Dialogue();
         string[] new_sentences = new string[2];
         new_sentences[0] = "Rinnngg..... Rinnnng.... Rinnnng";
-        new_sentences[1] = "Oh no! I'm not feeling too good...";
+        new_sentences[1] = "Oh no! I don't feel so good...";
         dialogue.sentences = new_sentences;
 
     }

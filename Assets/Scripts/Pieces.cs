@@ -47,11 +47,11 @@ public class Pieces : MonoBehaviour
               Debug.Log("Puzzle Solved");  
               finished = true;
               onFinish();
-              if (!showOnce)
-            {
+              //if (!showOnce)
+            //{
                 TriggerDialogue();
-                showOnce = true;
-            }
+                //showOnce = true;
+            //}
 
             }
           }

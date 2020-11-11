@@ -14,6 +14,7 @@ public class TimerManager : MonoBehaviour
     private TimeSpan timePlaying;
     private bool loopPrevention;
     private float gameTime = 300f;
+    private float minGameTime = 90f;
     private Dialogue dialogue;
 
     private void Awake()
@@ -38,10 +39,9 @@ public class TimerManager : MonoBehaviour
         StartTimer();
 
         dialogue = new Dialogue();
-        // TODO: SEAN FILL ME SEMPAI
         string[] new_sentences = new string[2];
-        new_sentences[0] = "\"Putting humans in a trapped and repetitive environment produces stress...\"";
-        new_sentences[1] = "\"Reducing time of the challenge also intensify the stress..\"";
+        new_sentences[0] = "Rinnngg..... Rinnnng.... Rinnnng";
+        new_sentences[1] = "Oh no! I'm not feeling too good...";
         dialogue.sentences = new_sentences;
 
     }
@@ -56,6 +56,9 @@ public class TimerManager : MonoBehaviour
     {
         isActivated = true;
         elapsedTime = gameTime;
+        int timesPlayed = PlayerPrefs.GetInt("times_played", 0);
+        elapsedTime -= timesPlayed * 60;
+        if (elapsedTime < minGameTime) elapsedTime = minGameTime;
 
         StartCoroutine("UpdateTimer");
 

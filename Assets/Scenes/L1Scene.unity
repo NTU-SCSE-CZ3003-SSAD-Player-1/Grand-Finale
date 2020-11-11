@@ -10466,10 +10466,11 @@ MonoBehaviour:
     sentences:
     - 'Where am i am?! How did i get here?!
 
-      ........
-
-      I need to get
-      out of here!!!!!!!!'
+      ........'
+    - I need to get out of here!!!!!!!!
+  repeatD:
+    sentences:
+    - Wait... Why am I back here again? Weird... O.o
 --- !u!4 &1868161785
 Transform:
   m_ObjectHideFlags: 0

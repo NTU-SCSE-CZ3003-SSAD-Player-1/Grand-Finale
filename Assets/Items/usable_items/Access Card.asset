@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Access Card
   m_EditorClassIdentifier: 
   name: Door Access Cards
-  icon: {fileID: 21300000, guid: 3da5d9a2e0c8f404596ec01a3f278bab, type: 3}
+  icon: {fileID: 21300000, guid: 5bd5048f884ef9d49aa6c5d7e9c146d3, type: 3}
   gameObjectName: Door Access Card
   itemtype: 0
   isHandHeld: 1
+  removeFromInventoryWhenUsed: 1

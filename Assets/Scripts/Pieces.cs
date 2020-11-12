@@ -10,7 +10,7 @@ public class Pieces : MonoBehaviour
     public bool InRightPosition;
     public bool Selected;
     public bool finished = false;
-    public static event Action onFinish;
+    public static event Action onFinish = delegate { };
     public bool showOnce; 
     Dialogue dialogue;
     

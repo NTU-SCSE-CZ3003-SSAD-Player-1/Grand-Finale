@@ -8,6 +8,7 @@ public class allLightsScript : MonoBehaviour
     public Light lightbulb1;
     public Light lightbulb2;
     public Light lightbulb3;
+    public DialogueManager dm;
     Dialogue dialogue;
     bool showOnce;
     // Start is called before the first frame update
@@ -22,15 +23,19 @@ public class allLightsScript : MonoBehaviour
         lightbulb1.intensity = 0;
         lightbulb2.intensity = 0;
         lightbulb3.intensity = 0;
-        if (!showOnce)
-            {
-                TriggerDialogue();
-                showOnce = true;
-            }
+        //TriggerDialogue();
         Pieces.onFinish += something;
+        StartCoroutine(callStartDialog());
     }
 
-    
+    private IEnumerator callStartDialog()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Triggering Start Dialogue L2");
+        TriggerDialogue();
+    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -54,6 +59,7 @@ public class allLightsScript : MonoBehaviour
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        //dm.StartDialogue(dialogue);
     }
 
 }
